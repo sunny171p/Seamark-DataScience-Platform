@@ -13,7 +13,6 @@ from The Seamark Global Innovations e-commerce business.
 A full-stack data science and automation platform built on live commercial 
 data from The Seamark Global Innovations e-commerce business.
 
----
 
 ## Project Structure
 
@@ -27,7 +26,6 @@ Scripts that process and analyse live commercial data from The Seamark Global In
 - **05_competitive_pricing.py** — Benchmarks Seamark pricing against Amazon UK across product categories to identify competitive gaps.
 - **06_affiliate_analysis.py** — Evaluates UpPromote affiliate performance by country, signup source, and programme to guide recruitment strategy.
 
----
 
 ### automation/ — Operations Automation
 Scripts that replace manual operational tasks, saving an estimated 150 hours per year.
@@ -49,8 +47,6 @@ Scripts that replace manual operational tasks, saving an estimated 150 hours per
 
 ### pipeline.py
 Executes the full analytics pipeline in the correct sequence with a single command.
-
----
 
 ## Technologies Used
 
@@ -101,7 +97,6 @@ Found this useful? Here is how to engage:
 
 All feedback welcome — this platform is actively maintained and improved.
  
-
 
 ## Author
 
