@@ -36,7 +36,7 @@
 
 import sqlite3
 
-DB_FILE = "seamark_analytics.db"
+DB_FILE = "seamark_inventory.db"
 
 
 def initialize_store_analytics_db():
@@ -119,7 +119,7 @@ def initialize_store_analytics_db():
         CREATE TABLE IF NOT EXISTS sales_log (
             sale_id        INTEGER PRIMARY KEY AUTOINCREMENT,
             sku            TEXT NOT NULL,
-            units_sold     INTEGER NOT NULL,
+            qty_sold     INTEGER NOT NULL,
             sale_price_gbp REAL NOT NULL,
             sale_date      TEXT DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (sku) 
@@ -190,7 +190,7 @@ def initialize_store_analytics_db():
     ]
 
     cursor.executemany("""
-        INSERT OR IGNORE INTO sales_log (sku, units_sold, sale_price_gbp)
+        INSERT OR IGNORE INTO sales_log (sku, qty_sold, sale_price_gbp)
         VALUES (?, ?, ?);
     """, sample_sales)
 

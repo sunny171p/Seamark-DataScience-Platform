@@ -91,7 +91,7 @@ def recalibrate_store_pricing():
     conn = sqlite3.connect(db_file)
     cursor = conn.cursor()
 
-    cursor.execute("SELECT id, sku, cost_usd FROM inventory")
+    cursor.execute("SELECT sku, sku, cost_usd FROM inventory")
     inventory_rows = cursor.fetchall()
 
     if not inventory_rows:
@@ -111,7 +111,7 @@ def recalibrate_store_pricing():
         new_retail_gbp = round((cost_usd * live_rate) * markup_factor, 2)
 
         cursor.execute(
-            "UPDATE inventory SET retail_gbp = ? WHERE id = ?",
+            "UPDATE inventory SET retail_gbp = ? WHERE sku =?",
             (new_retail_gbp, item_id)
         )
 

@@ -33,8 +33,8 @@ import pandas as pd
 
 # Load raw exports from Shopify admin
 # low_memory=False needed because price columns have mixed types
-raw_products = pd.read_csv('raw_data/products_export.csv', low_memory=False)
-raw_sessions = pd.read_csv('raw_data/sessions_by_month_365d.csv')
+raw_products = pd.read_csv('../raw_data/products_export.csv', low_memory=False)
+raw_sessions = pd.read_csv('../raw_data/sessions_by_month_365d.csv')
 
 print(f"Raw product rows loaded: {len(raw_products)}")
 print(f"Session months loaded: {len(raw_sessions)}")
@@ -122,12 +122,12 @@ print(f"\nProducts with a discount applied: {discounted_count}")
 # STEP 5 — SAVE CLEANED DATA
 # --
 
-products_clean.to_csv('cleaned_data/products_clean.csv', index=False)
+products_clean.to_csv('../cleaned_data/products_clean.csv', index=False)
 
 print("\n=== CLEANING COMPLETE ===")
 print(f"Final dataset shape: {products_clean.shape}")
 print(f"\nProduct Types:\n{products_clean['Type'].value_counts()}")
 print(f"\nTop 10 Vendors:\n{products_clean['Vendor'].value_counts().head(10)}")
 print(f"\nDiscount % Summary:\n{products_clean['Discount %'].describe().round(2)}")
-print("\nCleaned data saved to cleaned_data/products_clean.csv")
+print("\nCleaned data saved to ../cleaned_data/products_clean.csv")
 print("Ready for 02_product_classification.py")

@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: seamark-ecom-parser
+Version: 0.1.0
+Summary: A simple tool to clean up messy data for SQL databases.
+Author: Seamark Global Innovations
+Dynamic: author
+Dynamic: summary

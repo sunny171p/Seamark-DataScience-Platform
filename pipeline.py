@@ -40,6 +40,7 @@
 import subprocess
 import sys
 from datetime import datetime
+import os
 
 START_TIME = datetime.now()
 
@@ -58,12 +59,12 @@ print("=" * 62)
 # -
 
 pipeline_stages = [
-    ("01_data_cleaning.py",          "Stage 1 — Data Cleaning & Preparation"),
-    ("02_product_classification.py", "Stage 2 — Product Classification"),
-    ("03_funnel_analysis.py",        "Stage 3 — Conversion Funnel Analysis"),
-    ("04_pricing_analysis.py",       "Stage 4 — Internal Pricing Audit"),
-    ("05_competitive_pricing.py",    "Stage 5 — Competitive Pricing vs Amazon"),
-    ("06_affiliate_analysis.py",     "Stage 6 — Affiliate Programme Analysis"),
+    ("analytics/01_data_cleaning.py",          "Stage 1 — Data Cleaning & Preparation"),
+    ("analytics/02_product_classification.py", "Stage 2 — Product Classification"),
+    ("analytics/03_funnel_analysis.py",        "Stage 3 — Conversion Funnel Analysis"),
+    ("analytics/04_pricing_analysis.py",       "Stage 4 — Internal Pricing Audit"),
+    ("analytics/05_competitive_pricing.py",    "Stage 5 — Competitive Pricing vs Amazon"),
+    ("analytics/06_affiliate_analysis.py",     "Stage 6 — Affiliate Programme Analysis"),
 ]
 
 results = []
@@ -82,11 +83,14 @@ for filename, stage_name in pipeline_stages:
 
     try:
         result = subprocess.run(
-            [sys.executable, filename],
-            capture_output=True,
-            text=True,
-            timeout=120          # Safety net — scripts should finish in <30s
-        )
+    [sys.executable, filename.replace("analytics/", "")],
+    capture_output=True,
+    text=True,
+    timeout=120,
+    cwd=os.path.join(os.path.dirname(__file__), "analytics")
+)
+# Safety net — scripts should finish in <30s
+
 
         if result.returncode == 0:
             # Print the script's own output so I can see what it did

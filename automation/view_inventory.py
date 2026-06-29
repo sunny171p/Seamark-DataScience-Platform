@@ -107,7 +107,7 @@ def display_live_inventory():
             print(f"  {sku:<18} | "
                   f"{item_name:<22} | "
                   f"{category:<22} | "
-                  f"{source:<6} | "
+                  f"{(source or 'N/A'):<6} | "
                   f"${cost_usd:<9.2f} | "
                   f"£{retail_gbp:<11.2f} | "
                   f"{stock:<5} | "

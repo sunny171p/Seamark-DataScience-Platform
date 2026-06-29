@@ -3,7 +3,7 @@ import urllib.parse
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 
 PORT = 8081
-DB_FILE = "../automation/seamark_analytics.db"
+DB_FILE = "../automation/seamark_inventory.db"
 
 def get_inventory_metrics():
     """Calculates summary statistics from live warehouse stock data."""

@@ -33,7 +33,7 @@
 
 import sqlite3
 
-DB_FILE = "seamark_analytics.db"
+DB_FILE = "seamark_inventory.db"
 
 
 def run_business_intelligence():
@@ -48,7 +48,7 @@ def run_business_intelligence():
     print("=" * 55)
     print("  SEAMARK GLOBAL INNOVATIONS")
     print("  Weekly Business Intelligence Report")
-    print("  Internal use — Sunday Azeez")
+    print("  Internal use — Sunday Emmanuel Azeez")
     print("=" * 55)
 
 
@@ -73,11 +73,11 @@ def run_business_intelligence():
     query_margins = """
         SELECT 
             i.item_name,
-            SUM(s.units_sold) AS total_units_sold,
-            SUM(s.units_sold * i.retail_gbp) AS gross_revenue_gbp,
-            SUM(s.units_sold * (i.cost_usd * 0.75)) AS cost_basis_gbp,
-            SUM(s.units_sold * i.retail_gbp) - 
-            SUM(s.units_sold * (i.cost_usd * 0.75)) AS net_profit_gbp
+            SUM(s.qty_sold) AS total_qty_sold,
+            SUM(s.qty_sold * i.retail_gbp) AS gross_revenue_gbp,
+            SUM(s.qty_sold * (i.cost_usd * 0.75)) AS cost_basis_gbp,
+            SUM(s.qty_sold * i.retail_gbp) - 
+            SUM(s.qty_sold * (i.cost_usd * 0.75)) AS net_profit_gbp
         FROM sales_log s
         INNER JOIN inventory i ON s.sku = i.sku
         GROUP BY i.sku
@@ -94,13 +94,13 @@ def run_business_intelligence():
         total_profit = 0
 
         for row in margin_rows:
-            item_name, units_sold, gross_revenue, cost_basis, net_profit = row
+            item_name, qty_sold, gross_revenue, cost_basis, net_profit = row
 
             # Flag negative margin products immediately
             margin_flag = " *** NEGATIVE MARGIN ***" if net_profit < 0 else ""
 
             print(f"  {item_name:<25} | "
-                  f"Units: {units_sold:<4} | "
+                  f"Units: {qty_sold:<4} | "
                   f"Revenue: £{gross_revenue:>8,.2f} | "
                   f"Profit: £{net_profit:>8,.2f}"
                   f"{margin_flag}")
@@ -133,13 +133,12 @@ def run_business_intelligence():
 
     query_suppliers = """
         SELECT 
-            sup.supplier_name,
-            sup.region,
+            sup.name,
             COUNT(i.sku) AS product_count,
             COALESCE(SUM(i.stock), 0) AS total_stock_units
         FROM suppliers sup
-        LEFT JOIN inventory i ON sup.supplier_id = i.supplier_id
-        GROUP BY sup.supplier_id
+        LEFT JOIN inventory i ON sup.id = i.supplier_id
+        GROUP BY sup.id
         ORDER BY total_stock_units DESC;
     """
 
@@ -150,13 +149,12 @@ def run_business_intelligence():
         print("No supplier data found — check suppliers table is populated")
     else:
         for row in supplier_rows:
-            supplier_name, region, product_count, total_stock = row
+            supplier_name, product_count, total_stock = row
 
             # Flag suppliers with very low total stock
             stock_flag = " *** LOW STOCK ***" if total_stock < 10 else ""
 
             print(f"  {supplier_name:<28} | "
-                  f"Region: {region:<12} | "
                   f"Products: {product_count:<4} | "
                   f"Stock: {total_stock} units"
                   f"{stock_flag}")

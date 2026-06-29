@@ -5,7 +5,7 @@
 
 # Database Files
 INVENTORY_DB = "seamark_inventory.db"
-ANALYTICS_DB = "seamark_analytics.db"
+ANALYTICS_DB = "seamark_inventory.db"
 
 # Web Dashboard
 PORT = 8080
