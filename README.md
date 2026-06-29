@@ -73,6 +73,23 @@ Executes the full analytics pipeline in the correct sequence with a single comma
 - Automated inventory and data workflows saving an estimated 150 hours per year
 - Delivered a browser-accessible web dashboard for live business monitoring
 
+## Output Charts
+
+### Product Categories
+![Product Categories](outputs/product_categories.png)
+
+### Pricing Analysis
+![Pricing Analysis](outputs/pricing_analysis.png)
+
+### Funnel Analysis
+![Funnel Analysis](outputs/funnel_analysis.png)
+
+### Competitive Pricing vs Amazon
+![Competitive Pricing](outputs/competitive_pricing.png)
+
+### Affiliate Analysis
+![Affiliate Analysis](outputs/affiliate_analysis.png)
+
 ## Feedback & Community
 
 Found this useful? Here is how to engage:
