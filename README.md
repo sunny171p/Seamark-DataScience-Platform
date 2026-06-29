@@ -5,9 +5,8 @@
 
 # Seamark Data Science Platform
 
-This is basically the internal analytics + automation setup I’ve been building for The Seamark Global Innovations (our UK e‑commerce thing). This was started small and it was then grew into a mix of scripts, tools, and a simple dashboard. Not perfect, but it works and keeps things organised.
-
----
+A production-grade data science and automation platform built on live commercial data 
+from The Seamark Global Innovations e-commerce business.
 
 ## Overview
 
@@ -65,14 +64,14 @@ Executes the full analytics pipeline in the correct sequence with a single comma
 
 ## Business Impact
 
-- Processed and classified 8,078 live Shopify product records automatically
-- Identified pricing gaps across all product categories vs Amazon UK benchmarks
-- Analysed 12 months of conversion funnel data to identify revenue leakage
-- Evaluated affiliate performance across multiple countries and signup channels
+- 304 out of 316 products had misleading compare-at pricing
+- 22 customers reached checkout over 4 months with 0 conversions
+- 6 out of 10 product categories are price-competitive vs Amazon UK
+- Automated classification of 316 products into 10 categories in under 30 seconds
+- Full pipeline executes end-to-end in 11 seconds
+- Affiliate programme evaluated — 10 partners registered, zero commercial output identified
 - Automated inventory and data workflows saving an estimated 150 hours per year
 - Delivered a browser-accessible web dashboard for live business monitoring
-
----
 
 ## Feedback & Community
 
