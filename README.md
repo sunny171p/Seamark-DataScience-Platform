@@ -8,7 +8,24 @@
 
 ---
 
+## 🚀 Quick Start
+```bash
+git clone https://github.com/sunny171p/Seamark-DataScience-Platform.git
+cd Seamark-DataScience-Platform
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run dashboard/seamark_dashboard.py
+```
+
+
+
+Open your browser at **http://localhost:8501**
+
+---
+
 ## What This Project Is
+
 
 This is a production-grade data science and engineering platform built 
 entirely on live commercial data from The Seamark Global Innovations — 
