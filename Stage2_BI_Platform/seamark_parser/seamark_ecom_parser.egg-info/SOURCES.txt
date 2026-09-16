@@ -1,6 +1,0 @@
-README.md
-setup.py
-seamark_ecom_parser.egg-info/PKG-INFO
-seamark_ecom_parser.egg-info/SOURCES.txt
-seamark_ecom_parser.egg-info/dependency_links.txt
-seamark_ecom_parser.egg-info/top_level.txt

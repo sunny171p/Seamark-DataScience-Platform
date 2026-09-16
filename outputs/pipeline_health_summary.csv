@@ -1,0 +1,2 @@
+raw_rows,clean_rows,checked_rows,misleading_discount_count,quality_score_pct,last_pipeline_run,last_pipeline_file
+8078,316,271,259,4.4,06/09/2026 01:40,products_clean.csv
