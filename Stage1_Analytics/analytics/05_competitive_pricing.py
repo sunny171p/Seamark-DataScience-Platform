@@ -15,7 +15,10 @@
 # I manually checked Amazon UK prices for 3-5 representative
 # products in each category during June 2026 and took the
 # average. These are not live prices — they are a snapshot
-# benchmark I plan to update quarterly.
+# benchmark I plan to update quarterly. They live in their own
+# file (raw_data/amazon_uk_benchmarks.csv) now instead of being
+# typed into this script, so there's one copy of them instead of
+# whatever number I last pasted into whichever file needed it.
 #
 # LIMITATIONS I AM AWARE OF:
 # - Amazon prices change daily so this is a point-in-time view
@@ -41,18 +44,8 @@ print(f"Loaded {len(seamark_products)} products for competitive analysis")
 # Excluded obvious outliers (luxury items, bulk packs).
 # --
 
-amazon_benchmarks = {
-    'Apparel': 25.00,
-    'Footwear': 45.00,
-    'Smart TV': 399.00,
-    'Kitchen Appliances': 89.00,
-    'Health & Beauty': 22.00,
-    'Electronics': 55.00,
-    'Fitness': 35.00,
-    'Audio': 40.00,
-    'Photography': 65.00,
-    'Other': 30.00
-}
+benchmark_file = pd.read_csv('../raw_data/amazon_uk_benchmarks.csv')
+amazon_benchmarks = dict(zip(benchmark_file['Category'], benchmark_file['Amazon Benchmark (GBP)']))
 
 
 # --
@@ -96,6 +89,13 @@ expensive_count = (comparison['vs Amazon'] == 'MORE EXPENSIVE').sum()
 print(f"\nCategories where we are cheaper than Amazon: {cheaper_count}")
 print(f"Categories where we are more expensive than Amazon: {expensive_count}")
 print("\nNote: Being more expensive is not always bad — depends on product quality and brand positioning")
+
+# Save so the dashboard can show this table directly instead of
+# keeping its own separate copy of the Amazon benchmark numbers
+comparison.reset_index().rename(columns={'index': 'Category'}).to_csv(
+    '../../outputs/competitive_pricing.csv', index=False
+)
+print("\nComparison table saved to outputs/competitive_pricing.csv")
 
 
 # --

@@ -1,12 +1,12 @@
-Order Date,Order ID,Financial Status,Currency,Total (GBP)
-2026-03-20,SEA-01001,paid,GBP,12.67
-2026-03-30,SEA-01002,paid,GBP,15.69
-2026-04-21,SEA-01003,paid,GBP,52.22
-2026-04-25,SEA-01004,paid,GBP,14.87
-2026-06-04,SEA-01005,paid,GBP,25.67
-2026-06-10,SEA-01006,paid,GBP,22.19
-2026-06-24,SEA-01007,paid,GBP,104.65
-2026-07-10,SEA-01008,paid,GBP,10.53
-2026-07-14,SEA-01009,paid,GBP,33.91
-2026-07-24,SEA-01010,paid,GBP,29.1
-2026-08-04,SEA-01011,paid,GBP,49.95
+Order Date,Order ID,Product,Financial Status,Currency,Total (GBP)
+2026-03-20,SEA-01001,2024 Mens Print Pants Autumn/Winter New In Men's Clothing Trousers Sport Jogging Fitness Running Trousers Harajuku Streetwear,paid,GBP,12.67
+2026-03-30,SEA-01002,"Geepas 2 Slice Bread Toaster – 7 Level Browning, Defrost, Reheat & Cancel, 750W (Black)",paid,GBP,15.69
+2026-04-21,SEA-01003,Smart LED Gaming Strip Light Computer Monitor Backlight Sync Strip Light RGB Light Bar Screen USB Gaming Bedroom Decor Lamp,paid,GBP,52.22
+2026-04-25,SEA-01004,"Portable Milkshake and Smoothie Blender 10 Blades Powerful Juice Jug with USB Rechargeable for Home, Office, Sports, Outdoor.",paid,GBP,14.87
+2026-06-04,SEA-01005,Casual Woman Clothing  Summer Two Piece Set for Women T-Shirts O-Neck Shorts Daily Short Sleeve Tracksuit  Matching,paid,GBP,25.67
+2026-06-10,SEA-01006,Customize Insulated Stainless Steel Water Bottle with Straw - Ideal for Outdoor Leakproof & BPA-Free Perfect Gift for Men & Wome,paid,GBP,22.19
+2026-06-24,SEA-01007,User Friendly Portable HEPA Air Purifier with Negative Ion - Quiet for Bedrooms & Small Spaces,paid,GBP,104.65
+2026-07-10,SEA-01008,12V LED Strip SMD 2835 1M 2M 3M 4M 5M LED Stripe Tape Light 120LED/M 240LED/M Warm White Flexible Strip Ribbon Home Decor Light,paid,GBP,10.53
+2026-07-14,SEA-01009,"Women's clothing autumn new style elegant and fashionable banquet dress, grand display dress, African party bridesmaid dress",paid,GBP,33.91
+2026-07-24,SEA-01010,Women Suit Blazer Elegant Coat 2025 Spring Autumn Fashion Korean Blazer Luxury Double Breasted Jacket Solid Ladies Tops Clothes,paid,GBP,29.1
+2026-08-04,SEA-01011,Women Clothes Sexy Fashion Long Dress Ladies Elegant Slim Solid Dresses Office Lady Club Dress Party Clothing Bodycon Dress,paid,GBP,49.95

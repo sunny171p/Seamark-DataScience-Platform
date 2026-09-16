@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 print("Loading products export...")
-df = pd.read_csv('raw_data/products_export.csv')
+df = pd.read_csv('Stage1_Analytics/raw_data/products_export.csv')
 
 # Keep only the columns we need
 cols = ['Title', 'Type', 'Product Category', 'Variant Price',
